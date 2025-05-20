@@ -1,0 +1,42 @@
+.login-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f6f1;
+}
+.login-section h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 2em;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 3em;
+  background-color: white;
+  width: 70%;
+  gap: 1em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.mat-mdc-unelevated-button:not(:disabled) {
+  background-color: #8db596;
+}
+.login-form a {
+  text-decoration: none;
+  color: #8db596;
+  font-weight: bold;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled)
+  .mdc-text-field--focused
+  .mdc-floating-label {
+  color: #8db596;
+}
+.mdc-floating-label:focus .mat-mdc-floating-label {
+  color: #8db596;
+}

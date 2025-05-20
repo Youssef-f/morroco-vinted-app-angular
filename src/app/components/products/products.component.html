@@ -1,0 +1,23 @@
+<section class="product-section" *ngIf="!isNewProductRoute">
+  <div class="product-section__filtre">
+    <ul class="product-section__filtre-list">
+      <li>
+        <a href="#">T-shirt</a>
+      </li>
+      <li>
+        <a [routerLink]="['new']">Ajouter un produit</a>
+      </li>
+      <li>
+        <a href="#">Pantalon</a>
+      </li>
+      <li>
+        <a href="#">Jacket</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="product-section__items">
+    <app-product-items [searchTerm]="currentSearchTerm"></app-product-items>
+  </div>
+</section>
+<router-outlet></router-outlet>

@@ -1,0 +1,36 @@
+<app-header />
+<section class="login-section">
+  <h2>Creer un compte</h2>
+  <form [formGroup]="userDetails" class="login-form">
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="Username" formControlName="username" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        placeholder="Email"
+        name="email"
+        formControlName="email"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        placeholder="Password"
+        type="password"
+        name="password"
+        formControlName="password"
+      />
+    </mat-form-field>
+
+    <button mat-flat-button type="submit" (click)="onSaveUser()">
+      S'enregistrer
+    </button>
+    <p>Vous avez déjà un compte ? <a routerLink="/login">Connectez-vous</a></p>
+  </form>
+</section>

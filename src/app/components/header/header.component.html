@@ -1,0 +1,73 @@
+<header class="header">
+  <nav class="nav">
+    <div class="nav__left">
+      <button class="hamburger-menu" (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h3>MALABISS</h3>
+    </div>
+
+    <div class="nav__search">
+      <input
+        class="nav-input"
+        type="text"
+        placeholder="Search..."
+        name="search"
+        [(ngModel)]="searchTerm"
+        (keyup.enter)="onSearch()"
+      />
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example search icon"
+        fontIcon="search"
+        (click)="onSearch()"
+      ></mat-icon>
+      <div
+        class="search-results"
+        *ngIf="filteredProducts.length > 0 && searchTerm"
+      >
+        <div
+          class="search-result-item"
+          *ngFor="let product of filteredProducts"
+          (click)="selectProduct(product)"
+        >
+          <img
+            [src]="product.imageUrl"
+            alt="{{ product.title }}"
+            class="search-result-image"
+          />
+          <div class="search-result-info">
+            <h4>{{ product.title }}</h4>
+            <p>{{ product.price }} €</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav__menu" [class.active]="isMenuOpen">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a routerLink="/home">home</a>
+          <a routerLink="/products">Le Marché</a>
+          <a routerLink="/login">Se connecter</a>
+        </li>
+      </ul>
+      <div class="nav__icons">
+        <a routerLink="/home">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="home"
+          ></mat-icon>
+        </a>
+        <a routerLink="/login">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example person icon"
+            fontIcon="person"
+          ></mat-icon>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>

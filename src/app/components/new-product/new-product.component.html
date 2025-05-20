@@ -1,0 +1,101 @@
+<div class="new-product-container">
+  <h3 class="new-product-title">Ajouter un nouveau produit</h3>
+  <form class="new-product-form" (ngSubmit)="onSubmit($event)">
+    <div class="form-group">
+      <label for="title">Titre du produit</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        id="description"
+        name="description"
+        class="form-control"
+        rows="4"
+        required
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Prix (€)</label>
+      <input
+        type="number"
+        id="price"
+        name="price"
+        class="form-control"
+        step="0.01"
+        min="0"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="itemCondition">État du produit</label>
+      <select
+        id="itemCondition"
+        name="itemCondition"
+        class="form-control"
+        required
+      >
+        <option value="new">Neuf</option>
+        <option value="like_new">Comme neuf</option>
+        <option value="good">Bon état</option>
+        <option value="fair">État moyen</option>
+        <option value="poor">Mauvais état</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Catégorie</label>
+      <select id="category" name="category" class="form-control" required>
+        <option value="clothing">Vêtements</option>
+        <option value="electronics">Électronique</option>
+        <option value="books">Livres</option>
+        <option value="home">Maison</option>
+        <option value="sports">Sports</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="images" class="file-label">
+        <span>Choisir des images</span>
+        <input
+          type="file"
+          id="images"
+          name="images"
+          accept="image/*"
+          class="file-input"
+          multiple
+          (change)="onFileSelected($event)"
+          required
+        />
+      </label>
+      <div class="image-preview-container" *ngIf="imagePreviews.length > 0">
+        <div
+          class="image-preview"
+          *ngFor="let preview of imagePreviews; let i = index"
+        >
+          <img [src]="preview" alt="Preview" />
+          <button type="button" class="remove-image" (click)="removeImage(i)">
+            ×
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="error-message" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+
+    <button type="submit" class="submit-button" [disabled]="isSubmitting">
+      {{ isSubmitting ? "Envoi en cours..." : "Ajouter le produit" }}
+    </button>
+  </form>
+</div>

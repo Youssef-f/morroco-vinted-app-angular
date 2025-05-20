@@ -1,0 +1,110 @@
+<div class="products-container">
+  <!-- All Products Section -->
+  <div *ngIf="showAllProducts" class="all-products-section">
+    <h2>All Products</h2>
+    <ul class="product-list">
+      <li *ngFor="let product of allProducts" class="product-item">
+        <div class="product-card">
+          <div class="product-image-section">
+            <span class="product-item-quality">{{
+              product.itemCondition
+            }}</span>
+            <img
+              [src]="'data:image/jpeg;base64,' + product.imageBase64"
+              [alt]="product.title"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.description }}</p>
+            <p class="price">{{ product.price }} €</p>
+            <p class="category">{{ product.category }}</p>
+            <p class="product-item-owner">
+              Vendeur : {{ product.sellerEmail }}
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Search Results Section -->
+  <div
+    *ngIf="!showAllProducts && searchResults.length > 0"
+    class="search-results-section"
+  >
+    <h2>Search Results</h2>
+    <ul class="product-list">
+      <li *ngFor="let product of searchResults" class="product-item">
+        <div class="product-card">
+          <div class="product-image-section">
+            <span class="product-item-quality">{{
+              product.itemCondition
+            }}</span>
+            <img
+              [src]="'data:image/jpeg;base64,' + product.imageBase64"
+              [alt]="product.title"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.description }}</p>
+            <p class="price">{{ product.price }} €</p>
+            <p class="category">{{ product.category }}</p>
+            <p class="product-item-owner">
+              Vendeur : {{ product.sellerEmail }}
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Suggested Products Section -->
+  <div
+    *ngIf="!showAllProducts && suggestedProducts.length > 0"
+    class="suggested-products-section"
+  >
+    <h2>You might also like</h2>
+    <ul class="product-list">
+      <li *ngFor="let product of suggestedProducts" class="product-item">
+        <div class="product-card">
+          <div class="product-image-section">
+            <span class="product-item-quality">{{
+              product.itemCondition
+            }}</span>
+            <img
+              [src]="'data:image/jpeg;base64,' + product.imageBase64"
+              [alt]="product.title"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.description }}</p>
+            <p class="price">{{ product.price }} €</p>
+            <p class="category">{{ product.category }}</p>
+            <p class="product-item-owner">
+              Vendeur : {{ product.sellerEmail }}
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- No Results Message -->
+  <div
+    *ngIf="
+      !showAllProducts &&
+      searchTerm &&
+      searchResults.length === 0 &&
+      suggestedProducts.length === 0
+    "
+    class="no-results"
+  >
+    <p>No products found matching "{{ searchTerm }}"</p>
+  </div>
+</div>

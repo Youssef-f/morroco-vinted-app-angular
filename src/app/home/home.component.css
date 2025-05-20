@@ -1,0 +1,262 @@
+.home-content {
+  background-color: #f7f6f1;
+  padding: 2em 3em 0 3em;
+}
+
+.home-content-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 5em;
+}
+.home-content__text {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.title-span {
+  color: #8db596;
+}
+.home-title {
+  font-size: 2.2em;
+}
+.home-content__text__description {
+  font-size: 0.9em;
+  color: #36454f;
+  font-weight: lighter;
+  letter-spacing: 1.3px;
+}
+
+.home-content__text__buttons {
+  display: flex;
+  gap: 1em;
+}
+.mat-mdc-unelevated-button:not(:disabled) {
+  background-color: #8db596;
+}
+.mat-mdc-outlined-button:not(:disabled) {
+  color: black;
+}
+.home-content__image {
+  flex: 1;
+  max-width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-content__image__img {
+  width: 100%;
+  height: 70%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 1em;
+}
+.feature-section {
+}
+.feature-section__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.feature-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.howitwork-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+  margin-top: 10px;
+  background-color: white;
+  padding: 2em;
+}
+.howitwork-description {
+  color: #36454f;
+  text-wrap: balance;
+  text-align: center;
+  font-size: 1.1em;
+}
+.howitwork-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  background-color: white;
+  padding: 2em;
+}
+.howitwork-grid div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f7f6f1;
+}
+.howitwork-grid i {
+  font-size: 3em;
+  color: #8db596;
+  margin-bottom: 0.5em;
+  border: 1px solid #8db596;
+  border-radius: 50%;
+  padding: 0.2em;
+}
+.howitwork-grid h3 {
+  font-size: 1.3em;
+  color: #36454f;
+  margin-bottom: 0.5em;
+}
+.howitwork-grid p {
+  font-size: 1em;
+  color: #36454f;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  text-wrap: balance;
+}
+
+.cta-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  padding: 2em;
+  background-color: #f7f6f1;
+  color: black;
+}
+.cta-section h3 {
+  font-size: 2em;
+  color: #36454f;
+}
+.cta-section p {
+  font-size: 1.2em;
+  color: #36454f;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  text-wrap: balance;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    padding: 1em;
+  }
+
+  .home-content-section {
+    flex-direction: column;
+    height: auto;
+    gap: 2em;
+    text-align: center;
+    padding: 1em 0;
+  }
+
+  .home-content__text {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .home-title {
+    font-size: 1.8em;
+    padding: 0 0.5em;
+  }
+
+  .home-content__text__description {
+    font-size: 0.95em;
+    letter-spacing: 1px;
+    padding: 0 1em;
+  }
+
+  .home-content__text__buttons {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .home-content__text__buttons button {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .home-content__image {
+    max-width: 100%;
+    height: auto;
+    padding: 1em;
+  }
+
+  .home-content__image__img {
+    height: auto;
+    width: 100%;
+    max-height: 300px;
+    border-radius: 0.5em;
+  }
+
+  .feature-section {
+    padding: 1em;
+  }
+
+  .feature-section-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    text-align: center;
+  }
+
+  .feature-section__text {
+    align-items: center;
+  }
+
+  .howitwork-section {
+    padding: 1em;
+  }
+
+  .howitwork-title {
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  .howitwork-description {
+    font-size: 1em;
+    padding: 0 1em;
+  }
+
+  .howitwork-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+    padding: 1em;
+  }
+
+  .howitwork-grid div {
+    padding: 1.5em;
+  }
+
+  .cta-section {
+    padding: 2em 1em;
+    text-align: center;
+  }
+
+  .cta-section h3 {
+    font-size: 1.8em;
+  }
+
+  .cta-section p {
+    font-size: 1em;
+    padding: 0 1em;
+  }
+
+  .cta-section .home-content__text__buttons {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
